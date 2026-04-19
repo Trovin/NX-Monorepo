@@ -1,5 +1,3 @@
-# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
-
 # compiled output
 dist
 tmp
@@ -7,6 +5,18 @@ out-tsc
 
 # dependencies
 node_modules
+
+# env variables (локальные настройки)
+.env
+.env.*
+!.env.example
+
+# logs (логи)
+logs
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # IDEs and editors
 /.idea
@@ -24,24 +34,36 @@ node_modules
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# misc
-/.sass-cache
+# misc (разные временные файлы)
+.sass-cache
 /connect.lock
 /coverage
 /libpeerconnection.log
-npm-debug.log
-yarn-error.log
 testem.log
 /typings
 
-# System Files
+# system files (системный мусор)
 .DS_Store
 Thumbs.db
 
+# Nx cache (кеш Nx)
 .nx/cache
 .nx/workspace-data
-.claude/worktrees
-.claude/settings.local.json
 
+# AI tools (не нужны в репе)
+.claude/
+.cursor/
+.codex/
+.gemini/
+.agents/
+.opencode/
+
+# vite / vitest cache
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
+
+# typescript cache
+*.tsbuildinfo
+
+# docker (локальные overrides)
+docker-compose.override.yml
