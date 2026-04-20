@@ -12,6 +12,8 @@ export default [
       'node_modules/**',
       '.nx/**',
       'coverage/**',
+      'apps/backend/webpack.config.js',
+      'jest.preset.js'
     ],
   },
 
@@ -30,15 +32,7 @@ export default [
       import: importPlugin,
     },
     rules: {
-      'no-console': 'warn',
-      'import/order': [
-        'warn',
-        {
-          alphabetize: { order: 'asc', caseInsensitive: true },
-          'newlines-between': 'always',
-          groups: [['builtin', 'external'], ['internal'], ['parent', 'sibling', 'index']],
-        },
-      ],
+      'no-console': 'warn'
     },
   },
 
